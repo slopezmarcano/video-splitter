@@ -16,6 +16,12 @@ This splits `big_video_file.mp4` into chunks, and the size of chunk is 10 second
 
 This splits `input.mp4` into chunks, and the size of chunk is 600 seconds. With extra option to scale output to `320:240` and use 8 threads to speed up.
 
+## Splitting video into equal chunks for all video files in folder
+
+OS Terminal `for f in *.MP4; do python3 ffmpeg-split.py ffmpeg -f "$f" -s 60 -v h264 ;done`
+
+Note the -v h264 to solve of the issues outlined below. 
+
 ## Splitting videos into unequal chunks
 
 In order to create unequal chunks of a video, you'll need to create ***manifest.json***.
